@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
   <head>
     <meta charset="utf-8"></meta>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
@@ -18,21 +19,24 @@
 	      <a class="navbar-brand" href="#">DnD Character Site</a>
 	    </div>
 	    <ul class="nav navbar-nav">
-	      <li class="active"><a href="#">Username</a></li>
+	      <li class="active"><a href="#" th:inline="text">[[${#httpServletRequest.remoteUser}]]</a></li>
 	      <li><a href="#">Characters</a></li>
 	      <li><a href="#">Campaigns</a></li>
 	    </ul>
 	    <ul class="nav navbar-nav navbar-right">
-	      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign out</a></li>
-	    </ul>
+	      <li><a href="javascript:$('#signoutform').submit()"><span class="glyphicon glyphicon-user"></span> Sign out</a></li>
+		</ul>
+			<form id="signoutform" hidden="true" th:action="@{/logout}" method="post">
+				<input type="submit" value="Sign Out"/>
+			</form>
 	  </div>
 	</nav>
   
 	</head>
 	<body>
-    
+
     <div class="jumbotron text-center">
-    	<h2>Username</h2>
+    	<h2 th:inline="text">[[${#httpServletRequest.remoteUser}]]</h2>
     	<p>Characters</p>
     </div>
     
