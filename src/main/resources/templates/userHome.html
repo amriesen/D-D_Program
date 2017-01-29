@@ -48,34 +48,55 @@
 		    <div class="col-md-8">
 		        <div class="row">
 		            <div class="col-md-6">
-		                <button type="button" class="btn btn-primary btn-block">Create Account</button>
-		            </div>
-		            <div class="col-md-6">
-		                <button type="button" class="btn btn-primary btn-block">Sign In</button>
+		                <button type="button" class="btn btn-primary btn-block">Create New Character</button>
 		            </div>
 		        </div>
-		        <div class="row">
-		            <div class="col-md-12">
-		          		<br/>
-		          		<br/>
-		                <h3>Site Purpose</h3>
-	    				<p>Once you have created an account, a user will be
-	    				able to use the character wizard, create a new campaign,
-	    				or view and access the online character sheets.</p>
-	    				<br/>
-		          		<br/>
-		          		<br/>
-		          		<br/>
-		          		<br/>
-		          		<br/>
-						<br/>
-		          		<br/>
-		          		<br/>
-		          		<br/>
-		          		<br/>
-		          		<br/>
-		            </div>
-		        </div>
+				<div class="row">
+					<div class="col-md-12">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<td>Name</td>
+									<td>Class</td>
+									<td>Rase</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="character : ${characters}">
+									<td th:text="${character.getName()}">Character Name</td>
+									<td>Working on it</td>
+									<td>Working on it</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="col-md-6">
+						<button type="button" class="btn btn-primary btn-block">Create New Campaign</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<table class="table table-hover">
+							<thead>
+							<tr>
+								<td>Name</td>
+								<td>Number of chars</td>
+							</tr>
+							</thead>
+							<tbody>
+								<tr th:each="campaign : ${campaigns}">
+									<td th:text="${campaign.getName()}">Character Name</td>
+									<td>Working on it</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
 		    </div>
 		</div>
 	</div>
